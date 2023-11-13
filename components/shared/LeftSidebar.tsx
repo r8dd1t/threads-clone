@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { sidebarLinks } from "@/constants";
 import { usePathname, useRouter } from "next/navigation";
-
 import { SignedIn, SignOutButton } from '@clerk/nextjs';
+
+import { sidebarLinks } from "@/constants";
 
 
 const LeftSidebar = () => {
@@ -13,7 +13,7 @@ const LeftSidebar = () => {
   const pathname = usePathname();
 
   return (
-    <section className="leftsidebard custom-scrollbar">
+    <section className="custom-scrollbar leftsidebar">
       <div className="flex w-full flex-1 flex-col gap-6 px-6">
         {sidebarLinks.map((link) => {
           const isActive = (pathname.includes(link.route) && link.route.length > 1) || pathname === link.route;
