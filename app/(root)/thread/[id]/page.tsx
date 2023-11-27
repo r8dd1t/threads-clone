@@ -25,7 +25,7 @@ async function page({ params }: { params: { id: string } }) {
       <div>
         <ThreadCard
           id={thread._id}
-          currentUserId={user.id}
+          currentUserId={user?.id || ""}
           parentId={thread.parentId}
           content={thread.text}
           author={thread.author}
